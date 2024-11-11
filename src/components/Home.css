@@ -1,0 +1,142 @@
+.home-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #85FFBD, #FFFB7D);
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent vertical scroll */
+}
+
+.home-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+.home-logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.home-navbar-name {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.home-search-bar {
+    flex: 1;
+    margin: 0 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #F3F3F3;
+}
+
+.home-navbar-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.home-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.home-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.home-user-name {
+    font-size: 16px;
+}
+
+.home-profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.home-about-link {
+    font-size: 16px;
+    margin-left: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px; /* Space below navbar */
+}
+
+.home-sync-button {
+    width: 100px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to bottom, #DA4453, #89216B);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.home-sync-button:hover {
+    background-color: #6ADF92;
+}
+
+.home-feeds {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+
+
+
+.home-feed {
+    flex: 0 0 auto;
+    min-width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Home.css */
+.home-icon {
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #555; /* Default icon color */
+  }
+  
+  .home-icon.active {
+    color: #DA4453; /* Color for active (current) page */
+    font-weight: bold;
+  }
+  

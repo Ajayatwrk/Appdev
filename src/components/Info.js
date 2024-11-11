@@ -1,74 +1,139 @@
 import React, { useState } from 'react';
 import './Info.css';
+import { useNavigate } from 'react-router-dom';
 
 const Info = () => {
-  const [address, setAddress] = useState('');
+  const navigate=useNavigate();
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [headline, setHeadline] = useState('');
+  const [pronouns, setPronouns] = useState('');
+  const [dob, setDob] = useState('');
+  const [cityRegion, setCityRegion] = useState('');
   const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [country, setCountry] = useState('');
-  const [about, setAbout] = useState('');
+  const [website, setWebsite] = useState('');
+  const [linkedin, setLinkedin] = useState('');
+  const [github, setGithub] = useState('');
+  const [instagram, setInstagram] = useState('');
+  const [facebook, setFacebook] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleInfoSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted Information:', { address, city, state, country, about });
-    // Place any API call or further processing logic here
+    console.log('Info submitted:', { firstname, lastname, headline, pronouns, dob, cityRegion, city, website, linkedin, github, instagram, facebook });
+    navigate('/Home');
   };
 
   return (
-    <div className="container">
-      <div className="add-info-container">
-        <h2>Additional Information</h2>
-        <form onSubmit={handleSubmit}>
+    <div className='container'>
+      <div className='info-container'>
+      <h2>Profile Information</h2>
+        <form onSubmit={handleInfoSubmit}>
           <label>
-            Address
+            Name*
+            <div className='input-group'>
+              <input
+                type="text"
+                placeholder='First Name'
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                placeholder='Last Name'
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                required
+              />
+            </div>
+          </label>
+
+          <label>
+            Headline
             <input
               type="text"
-              placeholder="Enter your address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
+              placeholder='Your professional headline'
+              value={headline}
+              onChange={(e) => setHeadline(e.target.value)}
             />
           </label>
+
           <label>
-            City
+            Pronouns
             <input
               type="text"
-              placeholder="Enter your city"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
+              placeholder='Your pronouns'
+              value={pronouns}
+              onChange={(e) => setPronouns(e.target.value)}
             />
           </label>
+
           <label>
-            State
+            Date of Birth
             <input
-              type="text"
-              placeholder="Enter your state"
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-              required
+              type="date"
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
             />
           </label>
+
           <label>
-            Country
-            <input
-              type="text"
-              placeholder="Enter your country"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-              required
-            />
+            Location
+            <div className='input-group'>
+              <input
+                type="text"
+                placeholder='City or region'
+                value={cityRegion}
+                onChange={(e) => setCityRegion(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder='City'
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
           </label>
+
           <label>
-            About You
-            <textarea
-              placeholder="Tell us about yourself"
-              value={about}
-              onChange={(e) => setAbout(e.target.value)}
-              required
-            />
+            Contact Info
+            <div className='input-group'>
+              <input
+                type="text"
+                placeholder='Website'
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder='LinkedIn'
+                value={linkedin}
+                onChange={(e) => setLinkedin(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder='GitHub'
+                value={github}
+                onChange={(e) => setGithub(e.target.value)}
+              />
+            </div>
+            <div className='input-group'>
+              <input
+                type="text"
+                placeholder='Instagram'
+                value={instagram}
+                onChange={(e) => setInstagram(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder='Facebook'
+                value={facebook}
+                onChange={(e) => setFacebook(e.target.value)}
+              />
+            </div>
           </label>
-          <button type="submit" className="submit-button">Submit</button>
+
+          <button type="submit" className="submit-button">Save Info</button>
         </form>
       </div>
     </div>

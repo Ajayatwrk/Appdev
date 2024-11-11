@@ -1,0 +1,236 @@
+.profile-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #85FFBD, #FFFB7D);
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent vertical scroll */
+}
+
+.profile-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.profile-logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.profile-navbar-name {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.profile-search-bar {
+  flex: 1;
+  margin: 0 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #F3F3F3;
+}
+
+.profile-navbar-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-user-name {
+  font-size: 16px;
+}
+
+.profile-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.profile-about-link {
+  font-size: 16px;
+  margin-left: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Banner Section */
+.profile-banner-container {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  background-color: #ccc;
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+.profile-banner-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+}
+
+.profile-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-banner-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ccc;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Profile Picture Section */
+.profile-profile-pic-label {
+  position: absolute;
+  bottom: 20px;
+  top: 30px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Sidebar */
+.profile-sidebar {
+  width: 200px;
+  height: 280px;
+  background-color: #fff;
+  position: absolute;
+  left: 50px;
+  top:290px; /* Adjust position as needed */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Right Sidebar */
+.profile-right-sidebar {
+  width: 100px;
+  height: 300px; /* Adjust height as needed */
+  background-color: #fff;
+  position: absolute;
+  top: 270px;
+  left:1150px; /* Adjust position as needed */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between images */
+}
+
+/* Circular images inside Right Sidebar */
+.profile-circle-img {
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ddd; /* Placeholder color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mainbar - Main Content Section */
+.profile-mainbar {
+  width: 800px;
+  height: 300px;
+  background-color: #fff;
+  position: absolute;
+  top: 275px;
+  left:690px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-sync-button {
+  width: 120px;
+  height: 40px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-sync-button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjustments to container overflow */
+.profile-container {
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding-bottom: 30px; /* Extra space for scroll */
+}
+
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #555; /* Default icon color */
+}
+
+.profile-icon.active {
+  color: #DA4453; /* Color for active (current) page */
+  font-weight: bold;
+}
