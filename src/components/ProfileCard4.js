@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Highlights4 from './Highlights4';
 import './ProfileCard4.css';
+import p4 from './person4.jpg';
 
 const ProfileCard4 = () => {
     const [showHighlights, setShowHighlights] = useState(false);
@@ -14,7 +15,7 @@ const ProfileCard4 = () => {
         <div className="profile-container">
             <div className="profile-card">
                 <div className="profile-pic">
-                    <img src="/person4.jpg" alt="Person 4" />
+                    <img src={p4} alt="Person 4" />
                 </div>
                 <div className="profile-info">
                     <h2>Arjun</h2>

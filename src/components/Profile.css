@@ -158,7 +158,7 @@
   height: 300px; /* Adjust height as needed */
   background-color: #fff;
   position: absolute;
-  top: 270px;
+  top: 260px;
   left:1150px; /* Adjust position as needed */
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -233,4 +233,63 @@
 .profile-icon.active {
   color: #DA4453; /* Color for active (current) page */
   font-weight: bold;
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-right-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-circle-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.profile-circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-navbar-icons {
+  display: flex;
+  gap: 12px; /* Adjust gap to fit icons properly */
+  align-items: center; /* Ensure icons are vertically centered */
+}
+
+.profile-icon {
+  font-size: 24px; /* Increase icon size */
+  cursor: pointer;
+  color: #555; /* Default icon color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-icon:hover {
+  color: #007BFF; /* Color change on hover */
+  transform: scale(1.1); /* Slight scaling effect on hover */
+}
+
+.profile-icon.active {
+  color: #DA4453; /* Active icon color */
+  font-weight: bold;
+}
+.profile-navbar-icons img
+{
+  width:30px;
+  height:30px;
+}
+.profile-profile-pic img
+{
+  width:45px;
+  height:45px;
+  border-radius:50%;
 }

@@ -270,5 +270,45 @@
   color: #fff;
 }
 
+.navbar-icons img{
+  width:40px;
+  height:40px;
+}
+
 /* Styling for the hover effect on the small card */
 
+.user-profile .profile-pic img {
+  margin-top:25px;
+  margin-left:20px;
+  width: 40px; /* Set to a smaller size */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image fills the space properly */
+}
+
+/* CSS */
+.user-profile .profile-pic {
+  width: 30px; /* Reduced size */
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.right-sidebar .circle-img,
+.sidebar .circle-img {
+  width: 50px; /* Adjusted size for sidebar images */
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.right-sidebar .circle-img img,
+.sidebar .circle-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -3,6 +3,17 @@ import { Link, useLocation } from 'react-router-dom';
 import './Profile.css';
 import ProfileMainBar from './ProfileMainBar'; // Import the reusable Profile MainBar
 
+// Import images for icons and sidebar
+import homeIcon from './home.png';
+import profileIcon from './profile.png';
+import communityIcon from './community.png';
+import profilePic from './person4.jpg';
+import logo from './logo.png';
+import p1 from './person1.jpg';
+import p2 from './person2.jpg';
+import p3 from './person3.jpg';
+import p4 from './person5.jpg';
+
 const Profile = () => {
   const [bannerImage, setBannerImage] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
@@ -38,17 +49,27 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <div className='profile-navbar'>
-        <div className="profile-logo">Logo</div>
-        <div className="profile-navbar-name">Website Name</div>
+        <div className="home-logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="profile-navbar-name">V-SYNC</div>
         <input type="text" className="profile-search-bar" placeholder="Search..." />
         <div className="profile-navbar-icons">
-          <Link to="/Home" className={`profile-icon ${location.pathname === '/Home' ? 'active' : ''}`}>Icon1</Link>
-          <Link to="/community" className={`profile-icon ${location.pathname === '/community' ? 'active' : ''}`}>Icon2</Link>
-          <Link to="/Profile" className={`profile-icon ${location.pathname === '/Profile' ? 'active' : ''}`}>Icon3</Link>
+          <Link to="/Home" className={`profile-icon ${location.pathname === '/Home' ? 'active' : ''}`}>
+            <img src={homeIcon} alt="Home Icon" />
+          </Link>
+          <Link to="/community" className={`profile-icon ${location.pathname === '/community' ? 'active' : ''}`}>
+            <img src={communityIcon} alt="Community Icon" />
+          </Link>
+          <Link to="/Profile" className={`profile-icon ${location.pathname === '/Profile' ? 'active' : ''}`}>
+            <img src={profileIcon} alt="Profile Icon" />
+          </Link>
         </div>
         <div className="profile-user-profile">
-          <span className="profile-user-name">User Name</span>
-          <div className="profile-profile-pic"></div>
+          <span className="profile-user-name">Vikram</span>
+          <div className="profile-profile-pic">
+            <img src={profilePic} alt="Profile" />
+          </div>
         </div>
         <a href="#about" className="profile-about-link">About Us</a>
       </div>
@@ -93,15 +114,33 @@ const Profile = () => {
       {/* Include the reusable ProfileMainBar component */}
       <ProfileMainBar />
 
+
+
       <div className="profile-sidebar">
-        <p>Sidebar Content</p>
+      <div className="profile-sidebar-header">
+          <p>Vikram</p>
+          <p>Followers: 220</p>
+          <p>Interactions: 134</p>
+          <p>Highlights: 5</p>
+        </div>
+        <div className="profile-sidebar-content">
+          <p>Bio: Tech enthusiast, always learning new things!</p>
+        </div>
       </div>
 
       <div className="profile-right-sidebar">
-        <div className="profile-circle-img"></div>
-        <div className="profile-circle-img"></div>
-        <div className="profile-circle-img"></div>
-        <div className="profile-circle-img"></div>
+        <div className="profile-circle-img">
+          <img src={p1} alt="Right Sidebar User 1" />
+        </div>
+        <div className="profile-circle-img">
+          <img src={p2} alt="Right Sidebar User 2" />
+        </div>
+        <div className="profile-circle-img">
+          <img src={p3} alt="Right Sidebar User 3" />
+        </div>
+        <div className="profile-circle-img">
+          <img src={p4} alt="Right Sidebar User 4" />
+        </div>
       </div>
     </div>
   );

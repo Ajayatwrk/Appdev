@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import CardContainer from './CardContainer'; // Importing the new component
-import CombinedMessageCard from './CombinedMessageCard'; // Importing the combined message card component
+import CardContainer from './CardContainer';
+import CombinedMessageCard from './CombinedMessageCard';
 import './Community.css';
+
+// Image Imports
+import homeIcon from './home.png';
+import profileIcon from './profile.png';
+import communityIcon from './community.png';
+import profilePic from './person4.jpg';
+import logo from './logo.png';
+import p1 from './person1.jpg';
+import p2 from './person2.jpg';
+import p3 from './person3.jpg';
+import p4 from './person5.jpg';
 
 const Community = () => {
   const [bannerImage, setBannerImage] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
-  const [showCardContainer, setShowCardContainer] = useState(true); // State to toggle between components
+  const [showCardContainer, setShowCardContainer] = useState(true);
 
   useEffect(() => {
     const savedBannerImage = localStorage.getItem('bannerImage');
     const savedProfileImage = localStorage.getItem('profileImage');
-
     if (savedBannerImage) setBannerImage(savedBannerImage);
     if (savedProfileImage) setProfileImage(savedProfileImage);
   }, []);
@@ -37,7 +47,6 @@ const Community = () => {
 
   const location = useLocation();
 
-  // Toggle between CardContainer and CombinedMessageCard
   const handleButtonClick = (type) => {
     if (type === 'cardContainer') {
       setShowCardContainer(true);
@@ -49,17 +58,28 @@ const Community = () => {
   return (
     <div className="community-container">
       <div className="navbar">
-        <div className="logo">Logo</div>
-        <div className="navbar-name">Website Name</div>
+        <div className="home-logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className="navbar-name">V-SYNC</div>
         <input type="text" className="search-bar" placeholder="Search..." />
         <div className="navbar-icons">
-          <Link to="/" className={`icon ${location.pathname === '/' ? 'active' : ''}`}>Icon1</Link>
-          <Link to="/community" className={`icon ${location.pathname === '/community' ? 'active' : ''}`}>Icon2</Link>
-          <Link to="/Profile" className={`icon ${location.pathname === '/Profile' ? 'active' : ''}`}>Icon3</Link>
+          <Link to="/Home" className={`icon ${location.pathname === '/Home' ? 'active' : ''}`}>
+            <img src={homeIcon} alt="Home Icon" />
+          </Link>
+          <Link to="/community" className={`icon ${location.pathname === '/community' ? 'active' : ''}`}>
+            <img src={communityIcon} alt="Community Icon" />
+          </Link>
+          <Link to="/Profile" className={`icon ${location.pathname === '/Profile' ? 'active' : ''}`}>
+            <img src={profileIcon} alt="Profile Icon" />
+          </Link>
         </div>
+
         <div className="user-profile">
           <span className="user-name">User Name</span>
-          <div className="profile-pic"></div>
+          <div className="profile-pic">
+            <img src={profilePic} alt="Profile" />
+          </div>
         </div>
         <a href="#about" className="about-link">About Us</a>
       </div>
@@ -101,34 +121,42 @@ const Community = () => {
         </label>
       </div>
 
-      {/* Small card with buttons to toggle between components */}
       <div className="small-card">
-        <button
-          className="small-card-button"
-          onClick={() => handleButtonClick('cardContainer')}
-        >
+        <button className="small-card-button" onClick={() => handleButtonClick('cardContainer')}>
           Community
         </button>
-        <button
-          className="small-card-button"
-          onClick={() => handleButtonClick('messageCard')}
-        >
+        <button className="small-card-button" onClick={() => handleButtonClick('messageCard')}>
           Messages
         </button>
       </div>
 
-      {/* Conditionally render either the CardContainer or CombinedMessageCard */}
       {showCardContainer ? <CardContainer /> : <CombinedMessageCard />}
 
       <div className="sidebar">
-        <p>Sidebar Content</p>
+        <div className="sidebar-header">
+          <p>Vikram</p>
+          <p>Followers: 220</p>
+          <p>Interactions: 134</p>
+          <p>Highlights: 5</p>
+        </div>
+        <div className="sidebar-content">
+          <p>Bio: Tech enthusiast, always learning new things!</p>
+        </div>
       </div>
 
       <div className="right-sidebar">
-        <div className="circle-img"></div>
-        <div className="circle-img"></div>
-        <div className="circle-img"></div>
-        <div className="circle-img"></div>
+        <div className="circle-img">
+          <img src={p1} alt="Right Sidebar User 1" />
+        </div>
+        <div className="circle-img">
+          <img src={p2} alt="Right Sidebar User 2" />
+        </div>
+        <div className="circle-img">
+          <img src={p3} alt="Right Sidebar User 3" />
+        </div>
+        <div className="circle-img">
+          <img src={p4} alt="Right Sidebar User 4" />
+        </div>
       </div>
     </div>
   );
