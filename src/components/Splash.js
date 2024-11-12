@@ -8,7 +8,7 @@ const Splash = () => {
     
     setTimeout(() => {
       navigate('/Login');
-    }, 50000); 
+    }, 5000); 
   }, [navigate]);
 
   return (
